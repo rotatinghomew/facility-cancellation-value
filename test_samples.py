@@ -15,6 +15,9 @@ class SampleTests(unittest.TestCase):
             self.assertIn(event['id'], requests)
             self.assertLessEqual(event['event_minute'], event['received'])
         self.assertTrue(any(event['kind'] == '场地停用' for event in self.data['events']))
+        rescheduled = [item for item in self.data['events'] if item['kind'] == '改期']
+        self.assertEqual({item['accepted_replacement'] for item in rescheduled}, {True, False})
+        self.assertTrue(all(item['replacement']['start'] > requests[item['id']]['start'] for item in rescheduled))
 
     def test_activity_spans_more_than_one_slot(self):
         self.assertTrue(any(row['companion'] and row['end']-row['start'] > 45 for row in self.data['requests']))
