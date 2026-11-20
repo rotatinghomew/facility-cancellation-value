@@ -1,0 +1,18 @@
+{
+  "东桌": {
+    "capacity": 2,
+    "shareable": [
+      "西桌"
+    ]
+  },
+  "西桌": {
+    "capacity": 2,
+    "shareable": [
+      "东桌"
+    ]
+  },
+  "活动区": {
+    "capacity": 1,
+    "shareable": []
+  }
+}

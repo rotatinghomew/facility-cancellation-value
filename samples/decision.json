@@ -1,0 +1,26 @@
+{
+  "day": "2026-09-15",
+  "cutoffs": [
+    534,
+    595,
+    790
+  ],
+  "max_denied": 1,
+  "protected_max_denied": 0,
+  "max_wait_minutes": 25,
+  "linked_scenarios": [
+    {
+      "groups_show": [
+        "带队0",
+        "带队1"
+      ]
+    },
+    {
+      "groups_show": [
+        "带队1",
+        "带队2",
+        "带队3"
+      ]
+    }
+  ]
+}
